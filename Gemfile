@@ -5,9 +5,12 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
-gem 'pg'
+gem 'sqlite3'
+# gemfile
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+  gem 'pg'
+end
 #gem 'devise'
 # Gems used only for assets and not required
 # in production environments by default.
