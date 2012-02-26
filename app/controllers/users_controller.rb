@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     provider = "twitter";
-    authorization = Authorization.find_by_provider_and_user_id(provider, @user.id)
-    oauth_secret = authorization.secret
-    oauth_token = authorization.token
+    @authorization = Authorization.find_by_provider_and_user_id(provider, @user.id)
+    oauth_secret = @authorization.secret
+    oauth_token = @authorization.token
     authenticate(oauth_token,oauth_secret)
     @tweets = Twitter.user_timeline
   end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if !(params[:tweet]).nil?
       Twitter.update(params[:tweet])
     end
-    sleep 5
+    #sleep 5
     redirect_to :action => "show", :id => @user.id
   end
   
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     if !(params[:sid]).nil?
       Twitter.status_destroy(params[:sid])
     end
-    sleep 5
+    #sleep 5
     redirect_to :action => "show", :id => @user.id
   end
 
