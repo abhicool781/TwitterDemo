@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Nickname:</b>
+  <%= @user.nickname %>
+</p>
+
+<h3>List of all your tweets</h3>
+	<ol type="1">
+	<% @tweets.each do |tweet| %>
+	<li><em>
+	<%= tweet.text %></em>
+	<%= link_to "delete", "/users/delete/#{tweet.id}/#{@user.id}" %>
+	</li>
+	<% end %>
+</ol>
+
+<%= form_tag do %>
+<table>
+	<tr>
+		<td>
+			<%= text_area_tag(:tweet,"", :size => "30x3") %>
+			<%= hidden_field_tag(:id, @user.id) %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= submit_tag( "Tweet") %>
+		</td>
+	</tr>
+</table>
+
+<% end %>
