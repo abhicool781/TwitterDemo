@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if !(params[:tweet]).nil?
       Twitter.update(params[:tweet])
     end
-    #sleep 5
+    sleep 3
     redirect_to :action => "show", :id => @user.id
   end
   
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     if !(params[:sid]).nil?
       Twitter.status_destroy(params[:sid])
     end
-    #sleep 5
+    sleep 3
     redirect_to :action => "show", :id => @user.id
   end
 
