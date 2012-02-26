@@ -6,11 +6,12 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'pg'
 # gemfile
-group :production do
-  gem 'therubyracer', '~> 0.9.3.beta1' # you will need this too
-  gem 'pg'
-end
+##group :production do
+#  gem 'therubyracer', '~> 0.9.3.beta1' # you will need this too
+ # gem 'pg'
+#end
 #gem 'devise'
 # Gems used only for assets and not required
 # in production environments by default.
