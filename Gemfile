@@ -8,7 +8,7 @@ gem 'rails', '3.2.1'
 gem 'sqlite3'
 # gemfile
 group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+  gem 'therubyracer', '~> 0.9.3.beta1' # you will need this too
   gem 'pg'
 end
 #gem 'devise'
