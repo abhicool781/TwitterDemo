@@ -1,4 +1,4 @@
-DemoApp::Application.routes.draw do
+NewApp::Application.routes.draw do
   #resources :authorizations
   resources :users
   get   '/login', :to => 'authorizations#new', :as => :login
