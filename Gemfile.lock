@@ -133,6 +133,9 @@ GEM
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
 
+PLATFORMS
+  x86-mingw32
+
 DEPENDENCIES
   bundler
   coffee-rails (~> 3.2.1)
@@ -141,7 +144,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   pg
-  rails (= 3.2.1)
+  rails (~> 3.2.0.rc2)
   sass-rails (~> 3.2.3)
   twitter
   twitter_oauth
