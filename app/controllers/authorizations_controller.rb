@@ -3,7 +3,7 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations.json
   def callback
     auth_hash = request.env['omniauth.auth']
-    render :text=> auth_hash.inspect
+    #render :text=> auth_hash.inspect
     @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
     if @authorization
       oauth_token = auth_hash['credentials']['token']
