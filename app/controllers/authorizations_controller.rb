@@ -17,7 +17,7 @@ class AuthorizationsController < ApplicationController
       user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash["uid"], :token => auth_hash['credentials']['token'], 
       :secret => auth_hash['credentials']['secret'], :image_url => auth_hash["info"]["image"]
       user.save
-      msg = "Hi #{user.name}! You've signed up.\n Registered Users :" 
+      #msg = "Hi #{user.name}! You've signed up.\n Registered Users :" 
       @users = User.all
     end
   end

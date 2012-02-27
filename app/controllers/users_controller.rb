@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     oauth_secret = @authorization.secret
     oauth_token = @authorization.token
     authenticate(oauth_token,oauth_secret)
-    @tweets = Twitter.user_timeline
+    @tweets = Twitter.home_timeline
   end
   
   def tweet
